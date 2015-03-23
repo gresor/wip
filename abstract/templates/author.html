@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  {% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-md-9">
+          
+          <div class="jumbotron">
+                  <h1>This is the author page for {{ author}}</h1>
+                  <p>{{ author}}   has published {{total_articles}} articles in PLOS, which have been viewed {{total_views}} times.</p>
+          </div>  
+        </div>
+      </div>
+  </div>
+    
+<div class="container">
+  <div class="row">
+      <div class="col-md-9">
+      <h1>Articles</h1>
+          
+      <div class="article">
+          <!-- this is the box that will have infromation about an article -->
+          
+            <div class="row">
+            {% for article in articles%}
+                    <div class="col-md-9" style="width:100%">
+                      <h2>{{article.title_display}}</h2> {{article.publication_date}}
+                      <h3>{%for coauth in article.author_display%}
+                          {{coauth}}
+                          {% endfor %}</h3>
+                      <p class="abstract_text">{{article.abstract[0]}}  </p>
+                      <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+                    </div>
+
+            
+                {% endfor %}
+              
+            </div>
+      </div>
+      </div>
+          <div class="col-md-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <div class="list-group">
+                      
+                   
+              <div id="topics", class="info_box">
+                <!-- this is the box that will have taged topics in it -->
+                Topics <br>
+                <ul class="list-group-item">
+                  {% for topic in topics%}
+                  {{topic}} <br>
+                  {% endfor %}
+                </ul>
+              </div>
+              {#
+              <div id="key_words", class="info_box">
+                <!-- this is the box that will all the key words in it -->
+                Key word <br>
+                <ul class="list-group-item">
+                  {% for word in keywords%}
+                  {{word}}
+                  {% endfor %}
+                </ul>
+              </div>
+              #}
+              <div id="colab", class="info_box">
+                <!-- this is the box that will have all the other authors the tis person worked with -->
+                Colaborators <br>
+                <ul class="list-group-item">
+                  {% for co in coauths%}
+                  {{co}} <br>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div id="Jornals",class="info_box">
+                <!-- this is the box that will have all the journals that auth published in -->
+                Journals <br>
+                <ul class="list-group-item">
+                  {% for journal in journals%}
+                  {{journal}}
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+ </div>
+</div>
+{% endblock %}
+    
+

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ {% extends "base.html" %}
+
+
+    
+
+  
+{% block content %}
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-md-9">
+          
+
+          <div class="jumbotron">
+            <h1>cool search for science!</h1>
+            <p><div id="searchbox">
+                                                                                                                  
+        
+            <form action="/search" method ="POST" class ="search-box">
+              Abstract text for query:<br>
+              
+              <textarea rows="10" cols="60" name="q"></textarea>
+              <br> Authors to exclude: (first name last name seperate authors with commas)
+              <input type="text" name="au" size="60" value> <br>
+              
+              <input type="submit" value="Search">
+            </form>
+                </div id="searchbox"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+</html>

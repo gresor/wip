@@ -1,0 +1,51 @@
+
+ .red{
+       color: red
+    }
+
+.info_box{
+	/*these are all the little boxes of infromation*/
+	/*background-color: #b0c4de
+	color:blue; */
+
+}
+
+.abstract_text{
+	/*this is the formating for the text of abstracts, it should make thems scroll the overflow*/
+	overflow-y:scroll;
+	height: 250px;
+	/*width: 1000px*/
+
+}
+
+.search-box{
+       word-wrap: break-word
+    }
+
+#topics {
+	/*this is the box with all the taged topics for an author*/
+
+
+
+}
+
+#key_words {
+	/*this is the box that will all the key words in it*/
+
+
+
+}
+
+#colab {
+	/*this is the box that will have all the other authors the tis person worked with*/
+
+
+
+}
+
+#Jornals {
+	/*this is the box that will have all the journals that auth published in*/
+
+
+
+}

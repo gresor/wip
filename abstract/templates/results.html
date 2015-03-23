@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+{% extends "base.html" %}
+  
+
+  
+
+  {% block content %}
+    
+     <div class="container">
+       <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-md-9">
+          
+          <div class="jumbotron" >
+                  <h1>Results!</h1>
+                  <p>This was the abstract you asked me about:</p>
+                  <p class="abstract_text">{{ abstract }}</p>
+                  <p>The authors you wanted to exclude were:</p>
+                  <p class="red">{{ author }} </p>
+                  
+          </div>
+      
+          <p>look at this   </p>
+        </div>
+      </div>
+      
+      this is amazing!! <br>
+      
+        {% for rec in recs%}
+        <div class="col-md-9 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div class="list-group">
+            <a href="/author/{{rec[0]}}" class="list-group-item active">{{rec[0]}}</a>
+            
+          </div>
+        </div>
+       
+        {% endfor %}
+      
+    
+    </div>
+   {% endblock %}
